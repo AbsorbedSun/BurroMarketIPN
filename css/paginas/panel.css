@@ -1,0 +1,11 @@
+/* panel.html */
+
+/* Sección "Acceso rápido" */
+.acceso h2 {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.acceso .btn {
+  padding: 1rem 0.75rem;
+  font-size: 1.1rem;
+}

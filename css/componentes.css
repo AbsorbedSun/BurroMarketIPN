@@ -1,0 +1,264 @@
+/* Personalización de los componentes de Bootstrap que se repiten en
+   varias páginas: botones, tarjetas (card), formularios, insignias
+   (badge), listas (list-group) */
+
+/* Marca (ícono y nombre de la tienda) */
+.marca {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.marca img {
+  height: 36px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+}
+.marca small {
+  color: var(--teal-d);
+  font-weight: 600;
+}
+
+/* Íconos */
+:root {
+  --icono-blanco: brightness(0) invert(1);
+}
+.icono {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+}
+.btn-az .icono,
+.ico .icono,
+.mv-ico .icono,
+.ph .icono {
+  filter: var(--icono-blanco);
+}
+
+/* Botones (.btn) */
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+}
+.btn-pr {
+  background: var(--orange);
+  color: var(--ink);
+  border: 0;
+}
+.btn-pr:hover {
+  background: #f08010;
+  color: var(--ink);
+}
+.btn-out {
+  border: 1px solid var(--teal);
+  color: var(--teal-d);
+  background: transparent;
+}
+.btn-out:hover {
+  background: var(--teal);
+  color: #fff;
+}
+.btn-az {
+  background: var(--teal-d);
+  color: #fff;
+  border: 0;
+}
+.btn-az:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* Tarjeta (.card) */
+.card {
+  --bs-card-border-width: 0;
+  --bs-card-border-radius: var(--r);
+  --bs-card-inner-border-radius: var(--r);
+  --bs-card-spacer-x: 1.25rem;
+  --bs-card-spacer-y: 1.25rem;
+  --bs-card-bg: #fff;
+  color: var(--ink);
+  box-shadow: 0 4px 18px rgba(23, 47, 55, 0.06);
+}
+
+/* Campos de formulario (.form-control, .form-select) */
+.form-control,
+.form-select {
+  background: #f5f7f8;
+  border: 1px solid #e2e8eb;
+  border-radius: 12px;
+  padding: 0.6rem 0.9rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.2rem rgba(0, 137, 169, 0.2);
+}
+
+/* Variantes de tarjeta */
+.split {
+  --bs-card-border-radius: 28px;
+  --bs-card-spacer-x: 14px;
+  --bs-card-spacer-y: 14px;
+  box-shadow: 0 20px 50px rgba(23, 47, 55, 0.1);
+}
+.lado {
+  --bs-card-border-radius: 20px;
+  --bs-card-spacer-x: 2rem;
+  --bs-card-spacer-y: 2rem;
+  background: var(--teal-d);
+  color: #fff;
+  box-shadow: none;
+}
+.lado .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ilustración (hoja con puntos y círculos) */
+.ilu {
+  position: relative;
+  width: 170px;
+  height: 150px;
+}
+.ilu .hoja {
+  position: absolute;
+  inset: 0 10px 10px 10px;
+  background: #fff;
+  border-radius: 16px;
+  transform: rotate(6deg);
+  padding: 20px 16px;
+}
+.ilu .hoja i {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: #dbe3e6;
+  margin: 0 0 16px 22px;
+  position: relative;
+}
+.ilu .hoja i::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+.ilu .hoja i:nth-child(2)::before {
+  background: var(--teal);
+}
+.ilu .hoja i:nth-child(3)::before {
+  background: var(--rust);
+}
+.ilu b {
+  position: absolute;
+  border-radius: 50%;
+}
+.ilu .b1 {
+  width: 30px;
+  height: 30px;
+  background: var(--orange);
+  left: -6px;
+  bottom: 0;
+}
+.ilu .b2 {
+  width: 36px;
+  height: 36px;
+  background: var(--cyan);
+  right: -8px;
+  bottom: -4px;
+}
+
+/* Insignias (.badge): tamaño y colores de estado (Disponible / Bajo / Agotado) */
+.badge {
+  --bs-badge-padding-x: 0.65rem;
+  --bs-badge-padding-y: 0.2rem;
+  --bs-badge-font-size: 0.75rem;
+  --bs-badge-font-weight: 600;
+  line-height: 1.5;
+}
+.b-verde {
+  background: #d6f0f6;
+  color: #00566b;
+}
+.b-naranja {
+  background: #ffe8d1;
+  color: #a35200;
+}
+.b-rojo {
+  background: #fbd9cf;
+  color: #9a2c0b;
+}
+
+/* Colores de fondo de la paleta */
+.bg-o {
+  background: var(--orange);
+}
+.bg-t {
+  background: var(--teal);
+}
+.bg-r {
+  background: var(--rust);
+}
+.bg-c {
+  background: var(--cyan);
+}
+.bg-i {
+  background: var(--ink);
+}
+
+/* Listas (.list-group) sin fondo y con separador */
+.list-group {
+  --bs-list-group-bg: transparent;
+  --bs-list-group-color: var(--ink);
+  --bs-list-group-border-color: #eef2f4;
+  --bs-list-group-item-padding-x: 0;
+  --bs-list-group-item-padding-y: 0.6rem;
+}
+.lista .list-group-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Colores por categoría e imagen del producto */
+.c-ROP {
+  --cat: #ff8f27;
+}
+.c-PAP {
+  --cat: #0089a9;
+}
+.c-ELE {
+  --cat: #172f37;
+}
+.c-LAB {
+  --cat: #c25200;
+}
+.c-ACC {
+  --cat: #00a9c4;
+}
+.ph {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 3rem;
+  background: var(--cat);
+}
+.foto {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* Ventana emergente (.modal-content) */
+.popup {
+  border-radius: 24px;
+  padding: 1.5rem 1.8rem 2rem;
+  border: 0;
+}

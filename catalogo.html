@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catálogo | BurroMarket IPN</title>
+    <link rel="icon" href="img/logo_tienda.svg" type="image/svg+xml" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/componentes.css" rel="stylesheet" />
+    <link href="css/publico.css" rel="stylesheet" />
+    <link href="css/paginas/catalogo.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg nav-pub sticky-top">
+      <div class="container">
+        <a class="navbar-brand marca" href="index.html"
+          ><img src="img/logo_tienda.svg" alt="" /> BurroMarket
+          <small>IPN</small></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPub"
+          aria-controls="menuPub"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPub">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="catalogo.html"
+                >Catálogo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#institucional"
+                >Institucional</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-pr" href="login.html"
+                ><img class="icono" src="img/iconos/user.svg" alt="" /> Admin</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-4">
+      <h1 class="display-6 fw-bold mb-3">Explora el catálogo</h1>
+
+      <!-- Buscador y filtro por categoría -->
+      <form class="card mb-4" id="form-busqueda" novalidate>
+        <div class="card-body">
+          <div class="row g-2 align-items-end">
+            <div class="col-md-5">
+              <label for="q">¿Qué buscas?</label
+              ><input
+                class="form-control"
+                id="q"
+                name="q"
+                maxlength="50"
+                placeholder="Calculadora, bata, termo..."
+              />
+            </div>
+            <div class="col-md-4">
+              <label for="cat">Categoría</label>
+              <select class="form-select" id="cat" name="cat">
+                <option value="">Todas</option>
+                <option value="ROP">Ropa institucional</option>
+                <option value="PAP">Papelería y dibujo</option>
+                <option value="ELE">Electrónica y cómputo</option>
+                <option value="LAB">Laboratorio y taller</option>
+                <option value="ACC">Accesorios y souvenirs</option>
+              </select>
+            </div>
+            <div class="col-md-3 d-flex gap-2">
+              <button type="submit" class="btn btn-pr flex-grow-1">
+                <img
+                  class="icono"
+                  src="img/iconos/magnifying-glass.svg"
+                  alt=""
+                />
+                Buscar
+              </button>
+              <button
+                type="button"
+                id="btn-limpiar"
+                class="btn btn-out"
+                title="Mostrar todos"
+              >
+                Limpiar
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Cuadrícula de productos (Bootstrap grid + card) -->
+      <p class="muted">18 productos</p>
+      <div class="row g-3">
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <span class="badge rounded-pill badge-of">Oferta -20%</span>
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-LAB"
+                role="img"
+                aria-label="Bata de laboratorio blanca"
+              >
+                <img class="icono" src="img/iconos/flask.svg" alt="" />
+              </div>
+              <h2 class="card-title">Bata de laboratorio blanca</h2>
+              <p class="card-text muted small mb-1">Laboratorio y taller</p>
+              <p class="precio mb-2">
+                <s class="muted small">$230.00</s> $184.00
+              </p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-LAB001"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-naranja">Bajo</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <span class="badge rounded-pill badge-of">Oferta -15%</span>
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ELE"
+                role="img"
+                aria-label="Calculadora científica"
+              >
+                <img class="icono" src="img/iconos/microchip.svg" alt="" />
+              </div>
+              <h2 class="card-title">Calculadora científica</h2>
+              <p class="card-text muted small mb-1">Electrónica y cómputo</p>
+              <p class="precio mb-2">
+                <s class="muted small">$320.00</s> $272.00
+              </p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ELE001"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-naranja">Bajo</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <span class="badge rounded-pill badge-of">Oferta -10%</span>
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ELE"
+                role="img"
+                aria-label="Kit Arduino Uno con cables"
+              >
+                <img class="icono" src="img/iconos/microchip.svg" alt="" />
+              </div>
+              <h2 class="card-title">Kit Arduino Uno con cables</h2>
+              <p class="card-text muted small mb-1">Electrónica y cómputo</p>
+              <p class="precio mb-2">
+                <s class="muted small">$520.00</s> $468.00
+              </p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ELE003"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <span class="badge rounded-pill badge-of">Oferta -10%</span>
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ACC"
+                role="img"
+                aria-label="Mochila institucional"
+              >
+                <img class="icono" src="img/iconos/mug-hot.svg" alt="" />
+              </div>
+              <h2 class="card-title">Mochila institucional</h2>
+              <p class="card-text muted small mb-1">Accesorios y souvenirs</p>
+              <p class="precio mb-2">
+                <s class="muted small">$480.00</s> $432.00
+              </p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ACC002"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <span class="badge rounded-pill badge-of">Oferta -10%</span>
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ROP"
+                role="img"
+                aria-label="Sudadera guinda con capucha"
+              >
+                <img class="icono" src="img/iconos/shirt.svg" alt="" />
+              </div>
+              <h2 class="card-title">Sudadera guinda con capucha</h2>
+              <p class="card-text muted small mb-1">Ropa institucional</p>
+              <p class="precio mb-2">
+                <s class="muted small">$420.00</s> $378.00
+              </p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ROP001"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-PAP"
+                role="img"
+                aria-label="Carpeta institucional de argollas"
+              >
+                <img class="icono" src="img/iconos/pencil.svg" alt="" />
+              </div>
+              <h2 class="card-title">Carpeta institucional de argollas</h2>
+              <p class="card-text muted small mb-1">Papelería y dibujo</p>
+              <p class="precio mb-2">$85.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-PAP004"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ROP"
+                role="img"
+                aria-label="Chamarra deportiva guinda"
+              >
+                <img class="icono" src="img/iconos/shirt.svg" alt="" />
+              </div>
+              <h2 class="card-title">Chamarra deportiva guinda</h2>
+              <p class="card-text muted small mb-1">Ropa institucional</p>
+              <p class="precio mb-2">$580.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ROP004"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-PAP"
+                role="img"
+                aria-label="Cuaderno profesional cuadro grande"
+              >
+                <img class="icono" src="img/iconos/pencil.svg" alt="" />
+              </div>
+              <h2 class="card-title">Cuaderno profesional cuadro grande</h2>
+              <p class="card-text muted small mb-1">Papelería y dibujo</p>
+              <p class="precio mb-2">$55.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-PAP001"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ROP"
+                role="img"
+                aria-label="Gorra bordada IPN"
+              >
+                <img class="icono" src="img/iconos/shirt.svg" alt="" />
+              </div>
+              <h2 class="card-title">Gorra bordada IPN</h2>
+              <p class="card-text muted small mb-1">Ropa institucional</p>
+              <p class="precio mb-2">$140.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ROP003"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-naranja">Bajo</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-PAP"
+                role="img"
+                aria-label="Juego de escuadras y regla"
+              >
+                <img class="icono" src="img/iconos/pencil.svg" alt="" />
+              </div>
+              <h2 class="card-title">Juego de escuadras y regla</h2>
+              <p class="card-text muted small mb-1">Papelería y dibujo</p>
+              <p class="precio mb-2">$60.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-PAP002"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-LAB"
+                role="img"
+                aria-label="Kit de herramientas para electrónica"
+              >
+                <img class="icono" src="img/iconos/flask.svg" alt="" />
+              </div>
+              <h2 class="card-title">Kit de herramientas para electrónica</h2>
+              <p class="card-text muted small mb-1">Laboratorio y taller</p>
+              <p class="precio mb-2">$260.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-LAB004"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-LAB"
+                role="img"
+                aria-label="Lentes de seguridad"
+              >
+                <img class="icono" src="img/iconos/flask.svg" alt="" />
+              </div>
+              <h2 class="card-title">Lentes de seguridad</h2>
+              <p class="card-text muted small mb-1">Laboratorio y taller</p>
+              <p class="precio mb-2">$95.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-LAB002"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ACC"
+                role="img"
+                aria-label="Llavero escudo IPN"
+              >
+                <img class="icono" src="img/iconos/mug-hot.svg" alt="" />
+              </div>
+              <h2 class="card-title">Llavero escudo IPN</h2>
+              <p class="card-text muted small mb-1">Accesorios y souvenirs</p>
+              <p class="precio mb-2">$35.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ACC003"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ELE"
+                role="img"
+                aria-label="Memoria USB tipo C"
+              >
+                <img class="icono" src="img/iconos/microchip.svg" alt="" />
+              </div>
+              <h2 class="card-title">Memoria USB tipo C</h2>
+              <p class="card-text muted small mb-1">Electrónica y cómputo</p>
+              <p class="precio mb-2">$150.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ELE002"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-LAB"
+                role="img"
+                aria-label="Multímetro digital"
+              >
+                <img class="icono" src="img/iconos/flask.svg" alt="" />
+              </div>
+              <h2 class="card-title">Multímetro digital</h2>
+              <p class="card-text muted small mb-1">Laboratorio y taller</p>
+              <p class="precio mb-2">$350.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-LAB003"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ROP"
+                role="img"
+                aria-label="Playera polo institucional"
+              >
+                <img class="icono" src="img/iconos/shirt.svg" alt="" />
+              </div>
+              <h2 class="card-title">Playera polo institucional</h2>
+              <p class="card-text muted small mb-1">Ropa institucional</p>
+              <p class="precio mb-2">$250.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ROP002"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-PAP"
+                role="img"
+                aria-label="Set de plumas y marcatextos"
+              >
+                <img class="icono" src="img/iconos/pencil.svg" alt="" />
+              </div>
+              <h2 class="card-title">Set de plumas y marcatextos</h2>
+              <p class="card-text muted small mb-1">Papelería y dibujo</p>
+              <p class="precio mb-2">$70.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-PAP003"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-naranja">Bajo</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="card prod h-100">
+            <div class="card-body d-flex flex-column">
+              <div
+                class="foto ph c-ACC"
+                role="img"
+                aria-label="Termo guinda con logo"
+              >
+                <img class="icono" src="img/iconos/mug-hot.svg" alt="" />
+              </div>
+              <h2 class="card-title">Termo guinda con logo</h2>
+              <p class="card-text muted small mb-1">Accesorios y souvenirs</p>
+              <p class="precio mb-2">$190.00</p>
+              <div
+                class="mt-auto d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="btn btn-out btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#det-ACC001"
+                >
+                  Ver más
+                </button>
+                <span class="badge rounded-pill b-verde">Disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bata de laboratorio blanca -->
+    <div
+      class="modal fade"
+      id="det-LAB001"
+      tabindex="-1"
+      aria-labelledby="det-LAB001-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-LAB001-titulo">
+            Bata de laboratorio blanca
+          </h2>
+          <p class="text-center muted small">LAB001 · Laboratorio y taller</p>
+          <p>
+            Bata blanca de algodón con botones, obligatoria en los laboratorios.
+          </p>
+          <p class="mb-0"><b class="fs-5">$184.00</b> · Bajo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calculadora científica -->
+    <div
+      class="modal fade"
+      id="det-ELE001"
+      tabindex="-1"
+      aria-labelledby="det-ELE001-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ELE001-titulo">
+            Calculadora científica
+          </h2>
+          <p class="text-center muted small">ELE001 · Electrónica y cómputo</p>
+          <p>
+            Calculadora científica con más de 200 funciones, permitida en
+            exámenes.
+          </p>
+          <p class="mb-0"><b class="fs-5">$272.00</b> · Bajo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kit Arduino Uno con cables -->
+    <div
+      class="modal fade"
+      id="det-ELE003"
+      tabindex="-1"
+      aria-labelledby="det-ELE003-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ELE003-titulo">
+            Kit Arduino Uno con cables
+          </h2>
+          <p class="text-center muted small">ELE003 · Electrónica y cómputo</p>
+          <p>
+            Kit con placa Arduino Uno, protoboard, cables y componentes básicos.
+          </p>
+          <p class="mb-0"><b class="fs-5">$468.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mochila institucional -->
+    <div
+      class="modal fade"
+      id="det-ACC002"
+      tabindex="-1"
+      aria-labelledby="det-ACC002-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ACC002-titulo">
+            Mochila institucional
+          </h2>
+          <p class="text-center muted small">ACC002 · Accesorios y souvenirs</p>
+          <p>Mochila resistente con compartimento acolchonado para laptop.</p>
+          <p class="mb-0"><b class="fs-5">$432.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sudadera guinda con capucha -->
+    <div
+      class="modal fade"
+      id="det-ROP001"
+      tabindex="-1"
+      aria-labelledby="det-ROP001-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ROP001-titulo">
+            Sudadera guinda con capucha
+          </h2>
+          <p class="text-center muted small">ROP001 · Ropa institucional</p>
+          <p>
+            Sudadera guinda con capucha y bolsa frontal, ideal para los días
+            fríos en el campus.
+          </p>
+          <p class="mb-0"><b class="fs-5">$378.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carpeta institucional de argollas -->
+    <div
+      class="modal fade"
+      id="det-PAP004"
+      tabindex="-1"
+      aria-labelledby="det-PAP004-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-PAP004-titulo">
+            Carpeta institucional de argollas
+          </h2>
+          <p class="text-center muted small">PAP004 · Papelería y dibujo</p>
+          <p>Carpeta de tres argollas con el escudo del IPN y tamaño carta.</p>
+          <p class="mb-0"><b class="fs-5">$85.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chamarra deportiva guinda -->
+    <div
+      class="modal fade"
+      id="det-ROP004"
+      tabindex="-1"
+      aria-labelledby="det-ROP004-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ROP004-titulo">
+            Chamarra deportiva guinda
+          </h2>
+          <p class="text-center muted small">ROP004 · Ropa institucional</p>
+          <p>
+            Chamarra deportiva ligera con cierre completo y detalles en blanco.
+          </p>
+          <p class="mb-0"><b class="fs-5">$580.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cuaderno profesional cuadro grande -->
+    <div
+      class="modal fade"
+      id="det-PAP001"
+      tabindex="-1"
+      aria-labelledby="det-PAP001-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-PAP001-titulo">
+            Cuaderno profesional cuadro grande
+          </h2>
+          <p class="text-center muted small">PAP001 · Papelería y dibujo</p>
+          <p>
+            Cuaderno profesional de 100 hojas con cuadro grande, pasta dura.
+          </p>
+          <p class="mb-0"><b class="fs-5">$55.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gorra bordada IPN -->
+    <div
+      class="modal fade"
+      id="det-ROP003"
+      tabindex="-1"
+      aria-labelledby="det-ROP003-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ROP003-titulo">
+            Gorra bordada IPN
+          </h2>
+          <p class="text-center muted small">ROP003 · Ropa institucional</p>
+          <p>Gorra ajustable con el escudo del IPN bordado al frente.</p>
+          <p class="mb-0"><b class="fs-5">$140.00</b> · Bajo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Juego de escuadras y regla -->
+    <div
+      class="modal fade"
+      id="det-PAP002"
+      tabindex="-1"
+      aria-labelledby="det-PAP002-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-PAP002-titulo">
+            Juego de escuadras y regla
+          </h2>
+          <p class="text-center muted small">PAP002 · Papelería y dibujo</p>
+          <p>
+            Juego de dos escuadras y una regla de 30 cm para dibujo técnico.
+          </p>
+          <p class="mb-0"><b class="fs-5">$60.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kit de herramientas para electrónica -->
+    <div
+      class="modal fade"
+      id="det-LAB004"
+      tabindex="-1"
+      aria-labelledby="det-LAB004-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-LAB004-titulo">
+            Kit de herramientas para electrónica
+          </h2>
+          <p class="text-center muted small">LAB004 · Laboratorio y taller</p>
+          <p>
+            Pinzas, desarmadores y cautín básico para prácticas de electrónica.
+          </p>
+          <p class="mb-0"><b class="fs-5">$260.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lentes de seguridad -->
+    <div
+      class="modal fade"
+      id="det-LAB002"
+      tabindex="-1"
+      aria-labelledby="det-LAB002-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-LAB002-titulo">
+            Lentes de seguridad
+          </h2>
+          <p class="text-center muted small">LAB002 · Laboratorio y taller</p>
+          <p>Lentes de seguridad transparentes con protección lateral.</p>
+          <p class="mb-0"><b class="fs-5">$95.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Llavero escudo IPN -->
+    <div
+      class="modal fade"
+      id="det-ACC003"
+      tabindex="-1"
+      aria-labelledby="det-ACC003-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ACC003-titulo">
+            Llavero escudo IPN
+          </h2>
+          <p class="text-center muted small">ACC003 · Accesorios y souvenirs</p>
+          <p>
+            Llavero metálico con el escudo del Instituto Politécnico Nacional.
+          </p>
+          <p class="mb-0"><b class="fs-5">$35.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Memoria USB tipo C -->
+    <div
+      class="modal fade"
+      id="det-ELE002"
+      tabindex="-1"
+      aria-labelledby="det-ELE002-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ELE002-titulo">
+            Memoria USB tipo C
+          </h2>
+          <p class="text-center muted small">ELE002 · Electrónica y cómputo</p>
+          <p>Memoria USB de 64 GB con conector tipo C y tipo A.</p>
+          <p class="mb-0"><b class="fs-5">$150.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Multímetro digital -->
+    <div
+      class="modal fade"
+      id="det-LAB003"
+      tabindex="-1"
+      aria-labelledby="det-LAB003-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-LAB003-titulo">
+            Multímetro digital
+          </h2>
+          <p class="text-center muted small">LAB003 · Laboratorio y taller</p>
+          <p>Multímetro digital para medir voltaje, corriente y resistencia.</p>
+          <p class="mb-0"><b class="fs-5">$350.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Playera polo institucional -->
+    <div
+      class="modal fade"
+      id="det-ROP002"
+      tabindex="-1"
+      aria-labelledby="det-ROP002-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ROP002-titulo">
+            Playera polo institucional
+          </h2>
+          <p class="text-center muted small">ROP002 · Ropa institucional</p>
+          <p>
+            Playera polo de algodón con el escudo del IPN bordado en el pecho.
+          </p>
+          <p class="mb-0"><b class="fs-5">$250.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set de plumas y marcatextos -->
+    <div
+      class="modal fade"
+      id="det-PAP003"
+      tabindex="-1"
+      aria-labelledby="det-PAP003-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-PAP003-titulo">
+            Set de plumas y marcatextos
+          </h2>
+          <p class="text-center muted small">PAP003 · Papelería y dibujo</p>
+          <p>Paquete con plumas de colores y marcatextos para estudiar.</p>
+          <p class="mb-0"><b class="fs-5">$70.00</b> · Bajo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Termo guinda con logo -->
+    <div
+      class="modal fade"
+      id="det-ACC001"
+      tabindex="-1"
+      aria-labelledby="det-ACC001-titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content popup">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar"
+          ></button>
+          <h2 class="h4 text-center" id="det-ACC001-titulo">
+            Termo guinda con logo
+          </h2>
+          <p class="text-center muted small">ACC001 · Accesorios y souvenirs</p>
+          <p>Termo de acero inoxidable de 600 ml con el logo del IPN.</p>
+          <p class="mb-0"><b class="fs-5">$190.00</b> · Disponible</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="pie">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6 d-flex align-items-center gap-3">
+            <img
+              src="img/ipn.png"
+              alt="Escudo del Instituto Politécnico Nacional"
+            />
+            <img
+              src="img/escom.png"
+              alt="Logo de la Escuela Superior de Cómputo"
+            />
+            <div>
+              <b>Instituto Politécnico Nacional</b><br />Escuela Superior de
+              Cómputo · ESCOM
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <img class="pie-logo" src="img/logo_equipo.svg" alt="" />
+            <b>BurroMarket IPN</b><br />Equipo 5 · Grupo 4CM4
+          </div>
+          <div class="col-lg-3">
+            Tecnologías para Desarrollo de Aplicaciones Web
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/catalogo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+/* catalogo.html */
+
+/* Tarjeta de producto (.card con borde que aparece al pasar el cursor) */
+.prod {
+  --bs-card-border-width: 3px;
+  --bs-card-border-color: transparent;
+  --bs-card-spacer-x: 0.8rem;
+  --bs-card-spacer-y: 0.8rem;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.prod:hover {
+  border-color: var(--teal);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0, 137, 169, 0.18);
+}
+.prod h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.8rem 0 0.1rem;
+}
+.precio {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.badge-of {
+  --bs-badge-padding-x: 0.6rem;
+  --bs-badge-font-weight: 700;
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 1;
+  background: var(--orange);
+  color: var(--ink);
+}

@@ -1,0 +1,243 @@
+/* index.html */
+
+/* Presentación */
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.15;
+}
+.hero-art {
+  min-height: 340px;
+}
+.mini {
+  --bs-card-border-radius: 14px;
+  --bs-card-spacer-x: 0.6rem;
+  --bs-card-spacer-y: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  box-shadow: none;
+}
+.mini b {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+
+/* Íconos de colores (tarjetas «Lo que puedes hacer» y oferta académica) */
+.ico {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Carrusel de ofertas (.carousel de Bootstrap) */
+.ofertas {
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(23, 47, 55, 0.15);
+}
+.ofertas .carousel-item img {
+  height: clamp(320px, 36vw, 420px);
+  object-fit: cover;
+  object-position: right center;
+}
+.ofertas .carousel-control-prev,
+.ofertas .carousel-control-next {
+  width: 7%;
+}
+.ofertas .carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(23, 47, 55, 0.12);
+}
+.ofertas .carousel-caption {
+  z-index: 2;
+  top: 50%;
+  bottom: auto;
+  left: 10%;
+  right: auto;
+  width: min(520px, 50%);
+  transform: translateY(-50%);
+  text-align: left;
+  padding: 0;
+}
+.ofertas h3 {
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.etiqueta-oferta {
+  --bs-badge-font-size: 0.8rem;
+  --bs-badge-font-weight: 700;
+  background: var(--orange);
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.precio-anterior {
+  opacity: 0.8;
+  margin-right: 0.4rem;
+}
+.precio-oferta {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+@media (max-width: 575.98px) {
+  .ofertas .carousel-caption {
+    left: 12%;
+    width: 76%;
+  }
+}
+
+/* Apartado institucional */
+.lema {
+  background: var(--orange);
+  color: var(--ink);
+  box-shadow: none;
+}
+.lema .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lema .icono {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+.lema-texto {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.25;
+  margin: 0 0 0.4rem;
+}
+/* Cada institución usa su color institucional (--inst) */
+.inst-ipn {
+  --inst: var(--guinda);
+}
+.inst-escom {
+  --inst: var(--teal-d);
+}
+.inst-card {
+  overflow: hidden;
+}
+.inst-head {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--inst);
+  color: #fff;
+  padding: 1.75rem 2rem;
+}
+.inst-head p {
+  margin: 0;
+  line-height: 1.6;
+}
+.inst-logo {
+  height: 88px;
+  width: auto;
+  flex: none;
+  background: #fff;
+  border-radius: 16px;
+  padding: 8px;
+}
+.inst-body {
+  padding: 2rem;
+}
+.inst-sub {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--inst);
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+}
+
+/* Misión y Visión */
+.mv {
+  height: 100%;
+  background: #f5f7f8;
+  border-radius: 16px;
+  padding: 1.6rem;
+}
+.mv-ico {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--inst);
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 0.9rem;
+}
+.mv-vision .mv-ico {
+  background: var(--orange);
+  color: var(--ink);
+}
+.mv-vision .mv-ico .icono {
+  filter: none;
+}
+.mv h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+}
+.mv p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Pestañas «IPN | ESCOM» (.nav-pills de Bootstrap) */
+.inst-tabs {
+  display: inline-flex;
+  gap: 0.4rem;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.4rem;
+  box-shadow: 0 4px 18px rgba(23, 47, 55, 0.08);
+}
+.inst-tabs .nav-link {
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+}
+.inst-tabs .nav-link.active {
+  color: #fff !important;
+}
+.tab-ipn {
+  --bs-nav-pills-link-active-bg: var(--guinda);
+}
+.tab-escom {
+  --bs-nav-pills-link-active-bg: var(--teal-d);
+}
+@media (max-width: 575.98px) {
+  .inst-head {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.4rem;
+  }
+  .inst-body {
+    padding: 1.25rem;
+  }
+}
+.oferta-card {
+  --bs-card-bg: #f5f7f8;
+  --bs-card-spacer-y: 0.9rem;
+  box-shadow: none;
+}
+.oferta-card b {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.equipo-mini {
+  max-width: 340px;
+  box-shadow: 0 4px 18px rgba(23, 47, 55, 0.06);
+}

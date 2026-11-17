@@ -1,0 +1,45 @@
+/* Zona pública: barra de navegación superior (.navbar) y pie de página.
+   (index.html, catalogo.html y login.html) */
+
+/* El pie de página al final de la pantalla, aunque la página sea corta */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+
+/* Barra de navegación superior */
+.nav-pub {
+  background: var(--bg);
+}
+.nav-link.active {
+  color: var(--teal-d) !important;
+  font-weight: 600;
+}
+
+/* Pie de página */
+.pie {
+  background: var(--ink);
+  color: #cfe0e6;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+.pie b {
+  color: #fff;
+}
+.pie img {
+  height: 56px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 6px;
+}
+.pie .pie-logo {
+  height: 30px;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+}

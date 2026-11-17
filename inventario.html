@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inventario | BurroMarket IPN</title>
+    <link rel="icon" href="img/logo_tienda.svg" type="image/svg+xml" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/componentes.css" rel="stylesheet" />
+    <link href="css/admin.css" rel="stylesheet" />
+    <link href="css/paginas/inventario.css" rel="stylesheet" />
+    <script src="js/sesion.js"></script>
+  </head>
+  <body>
+    <div class="admin d-lg-flex">
+      <!-- Barra lateral (Bootstrap nav-pills) -->
+      <aside class="sidebar d-flex flex-column">
+        <a
+          class="marca d-block mb-3 px-2 text-decoration-none text-reset"
+          href="index.html"
+          ><img src="img/logo_tienda.svg" alt="" /> BurroMarket
+          <small>IPN</small></a
+        >
+        <nav class="nav nav-pills menu flex-nowrap">
+          <a class="nav-link" href="panel.html"
+            ><span class="caja"
+              ><img class="icono" src="img/iconos/house.svg" alt="" /></span
+            >Dashboard</a
+          >
+          <a class="nav-link" href="registro-producto.html"
+            ><span class="caja"
+              ><img
+                class="icono"
+                src="img/iconos/square-plus.svg"
+                alt="" /></span
+            >Registrar producto</a
+          >
+          <a class="nav-link active" aria-current="page" href="inventario.html"
+            ><span class="caja"
+              ><img class="icono" src="img/iconos/table.svg" alt="" /></span
+            >Inventario</a
+          >
+          <a class="nav-link" href="existencias-bajas.html"
+            ><span class="caja"
+              ><img
+                class="icono"
+                src="img/iconos/triangle-exclamation.svg"
+                alt="" /></span
+            >Existencias bajas
+            <span class="badge rounded-pill text-bg-danger ms-auto">4</span></a
+          >
+          <div class="side-lab d-none d-lg-block">Cuenta</div>
+          <a class="nav-link" href="catalogo.html"
+            ><span class="caja"
+              ><img class="icono" src="img/iconos/store.svg" alt="" /></span
+            >Ver tienda</a
+          >
+          <a class="nav-link" href="index.html"
+            ><span class="caja"
+              ><img
+                class="icono"
+                src="img/iconos/right-from-bracket.svg"
+                alt="" /></span
+            >Cerrar sesión</a
+          >
+        </nav>
+        <div class="card ayuda mt-auto d-none d-lg-block">
+          <div class="card-body">
+            <b>¿Necesitas ayuda?</b>
+            <p class="small mb-2">
+              Revisa cómo se ve el catálogo para los estudiantes.
+            </p>
+            <a class="btn btn-light btn-sm w-100" href="catalogo.html"
+              >Ver catálogo</a
+            >
+          </div>
+        </div>
+      </aside>
+
+      <main class="contenido">
+        <!-- Barra superior: ruta, título, buscador y usuario -->
+        <header class="top">
+          <div>
+            <div class="crumb">Páginas / Inventario</div>
+            <h1 class="h4 m-0">Inventario</h1>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <span class="small"
+              ><img class="icono" src="img/iconos/circle-user.svg" alt="" />
+              Administrador</span
+            >
+          </div>
+        </header>
+        <section class="row g-3 mb-3 resumen">
+          <div class="col-12 col-sm-4">
+            <div class="card stat s-orange h-100">
+              <div class="card-body">
+                <span class="ic"
+                  ><img class="icono" src="img/iconos/box.svg" alt="" /></span
+                ><b>18</b>Productos
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <div class="card stat s-dark h-100">
+              <div class="card-body">
+                <span class="ic"
+                  ><img
+                    class="icono"
+                    src="img/iconos/layer-group.svg"
+                    alt="" /></span
+                ><b>287</b>Unidades
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <div class="card stat s-teal h-100">
+              <div class="card-body">
+                <span class="ic"
+                  ><img class="icono" src="img/iconos/coins.svg" alt="" /></span
+                ><b>$46,700.00</b>Valor
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Buscador y filtro por categoría -->
+        <section class="card mb-3">
+          <div class="card-body">
+            <form
+              class="row g-2 align-items-end"
+              action="inventario.html"
+              method="get"
+              novalidate
+            >
+              <div class="col-12 col-md-6">
+                <label for="q">Buscar por nombre o código</label>
+                <input
+                  class="form-control"
+                  id="q"
+                  name="q"
+                  placeholder="Ej. calculadora o ELE001"
+                />
+              </div>
+              <div class="col-12 col-sm-8 col-md-4">
+                <label for="cat">Categoría</label>
+                <select class="form-select" id="cat" name="cat">
+                  <option value="">Todas</option>
+                  <option value="ROP">Ropa institucional</option>
+                  <option value="PAP">Papelería y dibujo</option>
+                  <option value="ELE">Electrónica y cómputo</option>
+                  <option value="LAB">Laboratorio y taller</option>
+                  <option value="ACC">Accesorios y souvenirs</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-4 col-md-2">
+                <button class="btn btn-pr w-100">Buscar</button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <div class="row g-3">
+          <!-- Tabla de inventario -->
+          <section class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table tabla tabla-inventario">
+                  <caption>
+                    Inventario de BurroMarket IPN: 18 productos
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Código</th>
+                      <th scope="col">Producto</th>
+                      <th scope="col">Categoría</th>
+                      <th scope="col">Precio</th>
+                      <th scope="col">Existencias</th>
+                      <th scope="col">Valor</th>
+                      <th scope="col">Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">ACC001</th>
+                      <td>Termo guinda con logo</td>
+                      <td>Accesorios y souvenirs</td>
+                      <td>$190.00</td>
+                      <td>11</td>
+                      <td>$2,090.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ACC002</th>
+                      <td>Mochila institucional</td>
+                      <td>Accesorios y souvenirs</td>
+                      <td>$480.00</td>
+                      <td>7</td>
+                      <td>$3,360.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ACC003</th>
+                      <td>Llavero escudo IPN</td>
+                      <td>Accesorios y souvenirs</td>
+                      <td>$35.00</td>
+                      <td>50</td>
+                      <td>$1,750.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ELE001</th>
+                      <td>Calculadora científica</td>
+                      <td>Electrónica y cómputo</td>
+                      <td>$320.00</td>
+                      <td>5</td>
+                      <td>$1,600.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-naranja">Bajo</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ELE002</th>
+                      <td>Memoria USB tipo C</td>
+                      <td>Electrónica y cómputo</td>
+                      <td>$150.00</td>
+                      <td>30</td>
+                      <td>$4,500.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ELE003</th>
+                      <td>Kit Arduino Uno con cables</td>
+                      <td>Electrónica y cómputo</td>
+                      <td>$520.00</td>
+                      <td>6</td>
+                      <td>$3,120.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">LAB001</th>
+                      <td>Bata de laboratorio blanca</td>
+                      <td>Laboratorio y taller</td>
+                      <td>$230.00</td>
+                      <td>2</td>
+                      <td>$460.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-naranja">Bajo</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">LAB002</th>
+                      <td>Lentes de seguridad</td>
+                      <td>Laboratorio y taller</td>
+                      <td>$95.00</td>
+                      <td>22</td>
+                      <td>$2,090.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">LAB003</th>
+                      <td>Multímetro digital</td>
+                      <td>Laboratorio y taller</td>
+                      <td>$350.00</td>
+                      <td>9</td>
+                      <td>$3,150.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">LAB004</th>
+                      <td>Kit de herramientas para electrónica</td>
+                      <td>Laboratorio y taller</td>
+                      <td>$260.00</td>
+                      <td>15</td>
+                      <td>$3,900.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">PAP001</th>
+                      <td>Cuaderno profesional cuadro grande</td>
+                      <td>Papelería y dibujo</td>
+                      <td>$55.00</td>
+                      <td>40</td>
+                      <td>$2,200.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">PAP002</th>
+                      <td>Juego de escuadras y regla</td>
+                      <td>Papelería y dibujo</td>
+                      <td>$60.00</td>
+                      <td>25</td>
+                      <td>$1,500.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">PAP003</th>
+                      <td>Set de plumas y marcatextos</td>
+                      <td>Papelería y dibujo</td>
+                      <td>$70.00</td>
+                      <td>3</td>
+                      <td>$210.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-naranja">Bajo</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">PAP004</th>
+                      <td>Carpeta institucional de argollas</td>
+                      <td>Papelería y dibujo</td>
+                      <td>$85.00</td>
+                      <td>18</td>
+                      <td>$1,530.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ROP001</th>
+                      <td>Sudadera guinda con capucha</td>
+                      <td>Ropa institucional</td>
+                      <td>$420.00</td>
+                      <td>12</td>
+                      <td>$5,040.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ROP002</th>
+                      <td>Playera polo institucional</td>
+                      <td>Ropa institucional</td>
+                      <td>$250.00</td>
+                      <td>20</td>
+                      <td>$5,000.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ROP003</th>
+                      <td>Gorra bordada IPN</td>
+                      <td>Ropa institucional</td>
+                      <td>$140.00</td>
+                      <td>4</td>
+                      <td>$560.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-naranja">Bajo</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ROP004</th>
+                      <td>Chamarra deportiva guinda</td>
+                      <td>Ropa institucional</td>
+                      <td>$580.00</td>
+                      <td>8</td>
+                      <td>$4,640.00</td>
+                      <td>
+                        <span class="badge rounded-pill b-verde"
+                          >Disponible</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <footer class="pie">
+          <div class="small text-center">
+            Instituto Politécnico Nacional · ESCOM · BurroMarket IPN, Equipo 5 ·
+            4CM4
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="js/inventario.js"></script>
+  </body>
+</html>

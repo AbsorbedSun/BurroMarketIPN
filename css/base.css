@@ -1,0 +1,45 @@
+/* Variables de color, tipografía y reglas generales.
+   Se carga en todas las páginas, siempre primero (después de Bootstrap) */
+:root {
+  --teal: #0089a9;
+  --teal-d: #00566b;
+  --orange: #ff8f27;
+  --rust: #c25200;
+  --guinda: #6a1342;
+  --cyan: #00e1ff;
+  --ink: #172f37;
+  --bg: #ecf1f4;
+  --muted: #66767e;
+  --r: 18px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+a {
+  color: var(--teal-d);
+}
+label {
+  font-weight: 500;
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+.muted {
+  color: var(--muted);
+}
+:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

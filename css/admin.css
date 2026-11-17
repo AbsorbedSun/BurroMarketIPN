@@ -1,0 +1,178 @@
+/* Zona de administración: barra lateral (.nav-pills), barra superior,
+   indicadores (.card) y tablas (.table).
+   (registro-producto, inventario y existencias-bajas) */
+
+/* Barra lateral: menú con los estilos de Bootstrap .nav-pills */
+.sidebar {
+  padding: 1rem;
+}
+.menu {
+  --bs-nav-link-color: var(--ink);
+  --bs-nav-link-hover-color: var(--ink);
+  --bs-nav-link-padding-x: 0.6rem;
+  --bs-nav-link-padding-y: 0.45rem;
+  --bs-nav-link-font-size: 0.92rem;
+  --bs-nav-link-font-weight: 500;
+  --bs-nav-pills-border-radius: 12px;
+  --bs-nav-pills-link-active-bg: #fff;
+  --bs-nav-pills-link-active-color: var(--ink);
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.menu .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  white-space: nowrap;
+}
+.menu .nav-link .caja {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border-radius: 10px;
+}
+.menu .nav-link.active {
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(23, 47, 55, 0.08);
+}
+.menu .nav-link.active .caja {
+  background: var(--orange);
+  color: #fff;
+}
+.menu .nav-link.active .icono {
+  filter: var(--icono-blanco);
+}
+.side-lab {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 1rem 0.6rem 0.2rem;
+}
+.ayuda {
+  --bs-card-spacer-x: 1rem;
+  --bs-card-spacer-y: 1rem;
+  background: var(--teal-d);
+  color: #fff;
+  box-shadow: none;
+}
+.contenido {
+  padding: 1rem;
+}
+
+/* Barra superior de cada página */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.crumb {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* Pie de página de la zona de administración */
+.pie {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+.pie > div {
+  background: var(--ink);
+  color: #cfe0e6;
+  border-radius: var(--r);
+  padding: 0.9rem 1.25rem;
+}
+
+/* En móvil el menú es una barra horizontal con desplazamiento,
+   en escritorio la barra queda fija a la izquierda */
+@media (max-width: 991.98px) {
+  .menu {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+}
+@media (min-width: 992px) {
+  .sidebar {
+    flex: 0 0 255px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  .contenido {
+    flex: 1;
+    min-width: 0;
+    padding: 1.5rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}
+
+/* Indicadores: tarjetas (.card) de color */
+.stat {
+  --bs-card-spacer-x: 1.2rem;
+  --bs-card-spacer-y: 1rem;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: none;
+  transition: transform 0.15s;
+}
+a.stat:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+.stat .ic {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+}
+.stat b {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  line-height: 1.1;
+}
+.s-orange {
+  background: var(--orange);
+  color: var(--ink);
+}
+a.s-orange:hover {
+  color: var(--ink);
+}
+.s-dark {
+  background: var(--ink);
+}
+.s-teal {
+  background: var(--teal);
+}
+.s-rust {
+  background: var(--rust);
+}
+
+/* Tabla (.table) de panel e inventario */
+.tabla {
+  --bs-table-bg: transparent;
+  margin: 0;
+}
+.tabla th {
+  font-weight: 600;
+  border-bottom: 1px solid #e5eaed;
+}
+.tabla td,
+.tabla th {
+  vertical-align: middle;
+}
+.tabla caption {
+  caption-side: top;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 0 0 0.6rem;
+}
