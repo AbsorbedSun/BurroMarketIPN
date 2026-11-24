@@ -105,7 +105,7 @@
               <div class="card-body">
                 <span class="ic"
                   ><img class="icono" src="img/iconos/box.svg" alt="" /></span
-                ><b>18</b>Productos
+                ><b id="totalProductos">18</b>Productos
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@
                     class="icono"
                     src="img/iconos/layer-group.svg"
                     alt="" /></span
-                ><b>287</b>Unidades
+                ><b id="totalUnidades">287</b>Unidades
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@
               <div class="card-body">
                 <span class="ic"
                   ><img class="icono" src="img/iconos/coins.svg" alt="" /></span
-                ><b>$46,700.00</b>Valor
+                ><b id="totalValor">$46,700.00</b>Valor
               </div>
             </div>
           </div>
@@ -185,6 +185,7 @@
                       <th scope="col">Existencias</th>
                       <th scope="col">Valor</th>
                       <th scope="col">Estado</th>
+                      <th scope="col" class="text-center">Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -200,6 +201,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">ACC002</th>
@@ -212,6 +231,24 @@
                         <span class="badge rounded-pill b-verde"
                           >Disponible</span
                         >
+                      </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -226,6 +263,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">ELE001</th>
@@ -236,6 +291,24 @@
                       <td>$1,600.00</td>
                       <td>
                         <span class="badge rounded-pill b-naranja">Bajo</span>
+                      </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -250,6 +323,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">ELE003</th>
@@ -263,6 +354,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">LAB001</th>
@@ -273,6 +382,24 @@
                       <td>$460.00</td>
                       <td>
                         <span class="badge rounded-pill b-naranja">Bajo</span>
+                      </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -287,6 +414,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">LAB003</th>
@@ -299,6 +444,24 @@
                         <span class="badge rounded-pill b-verde"
                           >Disponible</span
                         >
+                      </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -313,6 +476,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">PAP001</th>
@@ -325,6 +506,24 @@
                         <span class="badge rounded-pill b-verde"
                           >Disponible</span
                         >
+                      </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -339,6 +538,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">PAP003</th>
@@ -349,6 +566,24 @@
                       <td>$210.00</td>
                       <td>
                         <span class="badge rounded-pill b-naranja">Bajo</span>
+                      </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -363,6 +598,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">ROP001</th>
@@ -375,6 +628,24 @@
                         <span class="badge rounded-pill b-verde"
                           >Disponible</span
                         >
+                      </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -389,6 +660,24 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">ROP003</th>
@@ -399,6 +688,24 @@
                       <td>$560.00</td>
                       <td>
                         <span class="badge rounded-pill b-naranja">Bajo</span>
+                      </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -413,12 +720,155 @@
                           >Disponible</span
                         >
                       </td>
+                      <td class="acciones">
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-editar"
+                          title="Editar producto"
+                          aria-label="Editar producto"
+                        >
+                          <img class="icono" src="img/iconos/pencil.svg" alt="" />
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-accion btn-eliminar"
+                          title="Eliminar producto"
+                          aria-label="Eliminar producto"
+                        >
+                          <img class="icono" src="img/iconos/trash-can.svg" alt="" />
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </section>
+        </div>
+
+        <!-- Ventana emergente: editar producto (la llena js/inventario.js) -->
+        <div
+          class="modal fade"
+          id="modalEditar"
+          tabindex="-1"
+          aria-labelledby="modalEditarTitulo"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content popup">
+              <button
+                type="button"
+                class="btn-close ms-auto"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar"
+              ></button>
+              <h2 class="h4 text-center" id="modalEditarTitulo">
+                Editar producto
+              </h2>
+              <p class="text-center muted mb-3" id="editarSubtitulo"></p>
+              <form id="formEditar" novalidate>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="editarCodigo">Código</label>
+                    <input
+                      class="form-control"
+                      id="editarCodigo"
+                      readonly
+                      disabled
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="editarCategoria">Categoría</label>
+                    <input
+                      class="form-control"
+                      id="editarCategoria"
+                      readonly
+                      disabled
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="editarNombre">Nombre del producto</label>
+                    <input
+                      class="form-control"
+                      id="editarNombre"
+                      placeholder="3 a 60 letras"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="editarPrecio">Precio (MXN)</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      step="0.01"
+                      id="editarPrecio"
+                      placeholder="Ej. 99.50"
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="editarExistencias">Existencias</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      step="1"
+                      id="editarExistencias"
+                      placeholder="0 a 10,000"
+                    />
+                  </div>
+                </div>
+                <div
+                  id="editarErrores"
+                  class="alert alert-danger py-2 px-3 small mt-3 mb-0 d-none"
+                  role="alert"
+                ></div>
+                <button class="btn btn-az w-100 mt-3">Guardar cambios</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ventana emergente: confirmar eliminación -->
+        <div
+          class="modal fade"
+          id="modalEliminar"
+          tabindex="-1"
+          aria-labelledby="modalEliminarTitulo"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content popup text-center">
+              <button
+                type="button"
+                class="btn-close ms-auto"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar"
+              ></button>
+              <span class="aviso-eliminar mx-auto mb-3"
+                ><img class="icono" src="img/iconos/trash-can.svg" alt=""
+              /></span>
+              <h2 class="h4" id="modalEliminarTitulo">¿Eliminar producto?</h2>
+              <p class="muted mb-1">
+                Se quitará del inventario el siguiente producto:
+              </p>
+              <p class="fw-semibold mb-4" id="eliminarNombre"></p>
+              <div class="d-flex gap-2">
+                <button
+                  type="button"
+                  class="btn btn-out w-50"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-eliminar-confirmar w-50"
+                  id="btnConfirmarEliminar"
+                >
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <footer class="pie">
@@ -429,6 +879,7 @@
         </footer>
       </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/inventario.js"></script>
   </body>
 </html>

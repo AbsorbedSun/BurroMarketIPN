@@ -1,0 +1,37 @@
+/* registro-producto.html */
+
+/* Imagen del panel de color (sustituye la ilustración hecha con CSS) */
+.img-registro {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
+/* Ventana emergente del producto registrado */
+.exito-ic {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #d6f0f6;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+}
+.resumen-registro {
+  --bs-gutter-x: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.resumen-registro dd {
+  padding-left: 0.8rem !important;
+}
+.resumen-registro dt {
+  font-weight: 600;
+  color: var(--teal-d);
+}
+.resumen-registro dt,
+.resumen-registro dd {
+  padding: 0.45rem 0;
+  margin: 0;
+  border-bottom: 1px solid #eef2f4;
+}

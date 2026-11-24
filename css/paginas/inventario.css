@@ -58,6 +58,13 @@
   .tabla-inventario tbody tr > :nth-child(7)::before {
     content: "Estado";
   }
+  .tabla-inventario tbody tr > :nth-child(8)::before {
+    content: "Acciones";
+    margin-right: auto;
+  }
+  .tabla-inventario .acciones {
+    justify-content: flex-end;
+  }
 }
 
 /* Tarjetas de resumen proporcionales a la pantalla */
@@ -90,4 +97,55 @@
   .tabla-inventario th {
     white-space: nowrap;
   }
+}
+
+
+/* Botones de acción (editar / eliminar) */
+.tabla-inventario .acciones {
+  white-space: nowrap;
+  text-align: center;
+}
+.btn-accion {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+}
+.btn-editar {
+  background: #d6f0f6;
+}
+.btn-editar:hover {
+  background: var(--teal);
+}
+.btn-eliminar {
+  background: #fbd9cf;
+  margin-left: 0.3rem;
+}
+.btn-eliminar:hover {
+  background: var(--rust);
+}
+.btn-accion:hover .icono {
+  filter: var(--icono-blanco);
+}
+
+/* Ventana de confirmación para eliminar */
+.aviso-eliminar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fbd9cf;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+}
+.btn-eliminar-confirmar {
+  background: var(--rust);
+  color: #fff;
+  border: 0;
+}
+.btn-eliminar-confirmar:hover {
+  background: #9a2c0b;
+  color: #fff;
 }

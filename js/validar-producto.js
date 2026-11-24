@@ -10,8 +10,12 @@ var descripcion = document.getElementById("descripcion");
 var imagen = document.getElementById("imagen");
 
 var alerta = document.getElementById("alertaValidacion");
-var resumen = document.getElementById("tarjetaExitoRegistro");
 var contador = document.getElementById("contadorDescripcion");
+var modalRegistro = new bootstrap.Modal(
+  document.getElementById("modalRegistro"),
+);
+var vistaImagen = document.getElementById("prevImagenVista");
+var urlVistaPrevia = null; // dirección temporal de la imagen elegida
 
 /* Expresiones regulares */
 var patronCodigo = /^(ROP|PAP|ELE|LAB|ACC)[0-9]{3}$/; // prefijo + 3 dígitos
@@ -78,7 +82,6 @@ formulario.addEventListener("submit", function (evento) {
     campos[i].classList.remove("is-invalid");
   }
   alerta.className = "alert alert-danger py-2 px-3 small mt-3 mb-0 d-none";
-  resumen.classList.add("d-none");
 
   // Categoría: debe elegirse una opción
   if (categoria.value === "") {
@@ -163,8 +166,9 @@ formulario.addEventListener("submit", function (evento) {
     return;
   }
 
-  // Todo correcto: se muestran en pantalla los datos ingresados
-  document.getElementById("prevCategoria").textContent = categoria.value;
+  // Todo correcto: se muestran los datos en una ventana emergente
+  document.getElementById("prevCategoria").textContent =
+    categoria.options[categoria.selectedIndex].text;
   document.getElementById("prevCodigo").textContent = codigoTexto;
   document.getElementById("prevNombre").textContent = nombreTexto;
   document.getElementById("prevPrecio").textContent =
@@ -172,11 +176,23 @@ formulario.addEventListener("submit", function (evento) {
   document.getElementById("prevExistencias").textContent =
     Number(existenciasTexto);
   document.getElementById("prevDescripcion").textContent = descripcionTexto;
-  resumen.classList.remove("d-none");
+  document.getElementById("prevImagen").textContent =
+    archivo.name + " (" + (archivo.size / 1024).toFixed(1) + " KB)";
 
-  alerta.className = "alert alert-success py-2 px-3 small mt-3 mb-0";
-  alerta.textContent = "¡Producto validado y registrado correctamente!";
+  // Vista previa de la imagen adjunta
+  if (urlVistaPrevia !== null) {
+    URL.revokeObjectURL(urlVistaPrevia);
+  }
+  urlVistaPrevia = URL.createObjectURL(archivo);
+  vistaImagen.src = urlVistaPrevia;
+  vistaImagen.alt = "Imagen de " + nombreTexto;
+
+  modalRegistro.show();
 
   // Este código ya no se puede volver a usar en esta sesión
   codigosExistentes.push(codigoTexto);
+
+  // Se limpia el formulario para registrar otro producto
+  formulario.reset();
+  contador.textContent = "0 / 200";
 });
